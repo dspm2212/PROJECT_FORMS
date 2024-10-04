@@ -7,7 +7,7 @@
 ### <div align="center">Faculty of Systems Engineering</div>
 
 ### <div align="center">Authors</div>
- <div align="center">Jaider Santiago Avila - 20231020200 - - @S</div>
+ <div align="center">Jaider Santiago Avila - 20231020200 - jsquimbaya@udistrital.edu.co-</div>
  <div align="center">Daniel Santiago Pérez - 20231020203 - dsperezm@udistrital.edu.co - @dspm2212</div>
 
 ---
