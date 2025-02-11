@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend-java:
+    build: ./backend-java
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - backend-python
+
+  backend-python:
+    build: ./backend-python
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+    volumes:
+      - ./data:/app/data
+
+networks:
+  app-network:
