@@ -1,0 +1,17 @@
+[project]
+name = "app forms"
+version = "0.1.0"
+description = "this is a aplication to crated forms, register answers and cration and validation of user"
+authors = [
+    {name = "Daniel Perez and Jaider Avila"}
+]
+license = {text = "GNU/GPL"}
+readme = "README.md"
+requires-python = "3.12"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
