@@ -1,29 +1,30 @@
 package com.app.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
  * Represents a response to a form.
  */
 public class Response {
+    private int id;
     private int formId;
     private String userId;
-    private List<Answer> answers;
+    private List<String> answers;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime timestamp;
-
-    public Response(int formId, String userId, List<Answer> answers) {
+    public Response(int id, int formId, String userId, List<String> answers) {
+        this.id = id;
         this.formId = formId;
         this.userId = userId;
         this.answers = answers;
-        this.timestamp = LocalDateTime.now();
     }
 
+    public int getId() { return id; }
     public int getFormId() { return formId; }
     public String getUserId() { return userId; }
-    public List<Answer> getAnswers() { return answers; }
-    public LocalDateTime getTimestamp() { return timestamp; }
+    public List<String> getAnswers() { return answers; }
+
+    @Override
+    public String toString() {
+        return "Response{id=" + id + ", formId=" + formId + ", userId='" + userId + "', answers=" + answers + "}";
+    }
 }
