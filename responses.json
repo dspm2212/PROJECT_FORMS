@@ -1,1 +1,6 @@
-[{"formId":0,"userId":"1","answers":null,"timestamp"
+[ {
+  "id" : 1655558965,
+  "formId" : 1,
+  "userId" : "1",
+  "answers" : [ "12/02/2024", "5..0" ]
+} ]

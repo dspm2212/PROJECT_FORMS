@@ -1,24 +1,16 @@
 package com.app.models;
-
-import java.util.UUID;
-
 /**
  * Represents a system user.
  */
 public class User {
+    private static int idCounter = 1;
     private String id;
     private String firstName;
     private String lastName;
     private String email;
 
-    /**
-     * Constructor that generates a unique ID for the user.
-     * @param firstName User's first name.
-     * @param lastName User's last name.
-     * @param email User's email address.
-     */
     public User(String firstName, String lastName, String email) {
-        this.id = UUID.randomUUID().toString();
+        this.id = String.valueOf(idCounter++);
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
