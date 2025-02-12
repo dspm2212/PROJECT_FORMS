@@ -1,9 +1,10 @@
 package com.app.models;
 
+import com.app.models.questions.Question;
 import java.util.List;
 
 /**
- * Represents a form with a title, description, and questions.
+ * Represents a form with a title, description, and a list of questions.
  */
 public class Form {
     private int id;
@@ -11,15 +12,23 @@ public class Form {
     private String description;
     private List<Question> questions;
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public Form(int id, String title, String description, List<Question> questions) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.questions = questions;
+    }
 
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+    public int getId() { return id;}
+    public String getTitle() { return title;}
+    public String getDescription() { return description;}
+    public List<Question> getQuestions() { return questions;}
 
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
-
-    public List<Question> getQuestions() { return questions; }
-    public void setQuestions(List<Question> questions) { this.questions = questions; }
+    public void displayForm() {
+        System.out.println("Form: " + title);
+        System.out.println(description);
+        for (Question q : questions) {
+            q.displayQuestion();
+        }
+    }
 }
