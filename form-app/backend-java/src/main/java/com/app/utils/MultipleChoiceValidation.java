@@ -14,8 +14,7 @@ import java.util.List;
  * is one of the valid options provided.
  */
 public class MultipleChoiceValidation implements ValidationStrategy {
-    private List<String> validOptions; // List of valid options for the question
-
+    private List<String> validOptions; 
     /**
      * Constructs a new MultipleChoiceValidation with the specified valid options.
      *
