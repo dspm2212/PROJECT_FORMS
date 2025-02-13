@@ -13,10 +13,10 @@ import java.util.List;
  * user ID, and the list of answers provided by the user.
  */
 public class Response {
-    private int id; // Unique identifier for the response
-    private int formId; // The ID of the form being responded to
-    private String userId; // The ID of the user submitting the response
-    private List<String> answers; // The list of answers provided by the user
+    private int id; 
+    private int formId; 
+    private String userId; 
+    private List<String> answers; 
 
     /**
      * Constructs a new Response with the specified ID, form ID, user ID, and list of answers.
