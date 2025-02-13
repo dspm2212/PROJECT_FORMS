@@ -1,4 +1,9 @@
-// Main.java
+/**
+ * This file contains the main application class for interacting with the system via console.
+ * 
+ * Author: Daniel Santiago Pérez <dsperezm@udistrital.edu.co>
+ * Author: Jaider Santiago Avila Robles <jsquimbaya@udistrotal.edu.co>
+ */
 package com.app;
 
 import com.app.controllers.UserController;
@@ -14,7 +19,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 /**
- * Main application to interact with the system via console.
+ * This class provides a command-line interface for creating users, forms, and responses.
  */
 public class Main {
     public static void main(String[] args) {
@@ -22,18 +27,18 @@ public class Main {
         UserController userController = new UserController();
         FormController formController = new FormController();
         ResponseController responseController = new ResponseController();
-        
-        User currentUser = null;
-        boolean running = true;
+
+        User currentUser = null; // The currently logged-in user
+        boolean running = true; // Controls the main loop
 
         while (running) {
             System.out.println("Welcome! Choose an option: ");
             System.out.println("1. Create User");
             System.out.println("2. Login");
             System.out.println("3. Exit");
-            
+
             int choice = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine(); // Consume the newline character
 
             switch (choice) {
                 case 1:
@@ -69,9 +74,9 @@ public class Main {
                 System.out.println("2. View Forms");
                 System.out.println("3. Respond to Form");
                 System.out.println("4. Logout");
-                
+
                 int action = scanner.nextInt();
-                scanner.nextLine();
+                scanner.nextLine(); // Consume the newline character
 
                 switch (action) {
                     case 1:
@@ -88,11 +93,11 @@ public class Main {
                             System.out.println("Choose type: 1. Text  2. Date  3. Time  4. Multiple Choice");
                             int questionType = scanner.nextInt();
                             scanner.nextLine();
-                            
+
                             boolean isMandatory;
                             System.out.print("Is this question mandatory? (yes/no): ");
                             isMandatory = scanner.nextLine().equalsIgnoreCase("yes");
-                            
+
                             Question question = null;
                             switch (questionType) {
                                 case 1 -> question = new TextQuestion(UUID.randomUUID().hashCode(), questionText, isMandatory);
@@ -133,15 +138,15 @@ public class Main {
                         }
                         int formChoice = scanner.nextInt() - 1;
                         scanner.nextLine();
-                        
+
                         if (formChoice < 0 || formChoice >= availableForms.size()) {
                             System.out.println("Invalid choice.");
                             break;
                         }
-                        
+
                         Form selectedForm = availableForms.get(formChoice);
                         List<String> answers = new ArrayList<>();
-                        
+
                         for (Question q : selectedForm.getQuestions()) {
                             System.out.println(q.getText());
                             System.out.print("Answer: ");
