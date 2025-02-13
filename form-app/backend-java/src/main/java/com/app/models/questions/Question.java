@@ -11,9 +11,9 @@ package com.app.models.questions;
  * for different types of questions, such as text, date, time, and multiple-choice questions.
  */
 public abstract class Question {
-    private int id; // Unique identifier for the question
-    private String text; // The text of the question
-    private boolean isMandatory; // Indicates if the question is mandatory
+    private int id; 
+    private String text; 
+    private boolean isMandatory; 
 
     /**
      * Constructs a new Question with the specified ID, text, and mandatory status.
