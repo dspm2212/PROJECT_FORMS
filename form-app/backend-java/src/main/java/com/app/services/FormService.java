@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class FormService {
     public void saveFormData(String formData) {
-        FileManager.getInstance().saveToFile("form_data.json", formData);
+        FileManager.getInstance().saveToFile("data\form_data.json", formData);
     }
 }
